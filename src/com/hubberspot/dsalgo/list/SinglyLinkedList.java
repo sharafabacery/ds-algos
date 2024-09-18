@@ -212,7 +212,10 @@ public class SinglyLinkedList {
       if (head == null) {
          return newNode;
       }
-
+      if(head.data>newNode.data){
+         newNode.next=head;
+         head=newNode
+      }else{
       ListNode current = head;
       ListNode temp = null;
 
@@ -223,6 +226,8 @@ public class SinglyLinkedList {
 
       newNode.next = current;
       temp.next = newNode;
+         
+      }
       return head;
    }
 
